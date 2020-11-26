@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Check Different Stock Prices
+{% endblock %}
+<h3>Ticker is Required, rest are optional</h3>
+
+{% block body %}
+
+{% if error%}
+  {%endif%}
+
+  <h4>Make sure to format dates correctly</h4>
+  <form action="{{ url_for('results') }}" method="post" >
+      <input type="text" name="ticker" placeholder="Ticker Symbol">
+      <select name="interval">
+        <option value="1m">1 minute</option>
+        <option value="2m">2 minutes</option>
+        <option value="5m">5 minutes</option>
+        <option value="15m">15 minutes</option>
+        <option value="30m">30 minutes</option>
+        <option value="60m">60 minutes</option>
+        <option value="90m">90 minutes</option>
+        <option value="1d">1 day</option>
+        <option value="5d">5 days</option>
+        <option value="1wk">1 week</option>
+        <option value="1mo">1 month</option>
+        <option value="3mo">3 month</option>
+      </select>
+      <input type="text" name="start" placeholder="Start (YYYY-MM-DD)">
+      <input type="text" name="end" placeholder="End (YYYY-MM-DD)">
+      <button type="submit" class="btn btn-success">Search</button>
+  </form>
+{% endblock %}

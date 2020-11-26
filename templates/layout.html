@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Analyzer</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    </head>
+    <body style="margin:20px">
+      <nav>
+        <table style="width: 100%;table-layout:fixed;">
+          <tbody>
+            <tr>
+              <th style="border:2px solid black;background-color:lightgray;text-align:center"><a href="{{ url_for('index') }}">Home</a></th>
+              <th style="border:2px solid black;background-color:lightgray;text-align:center"><a href="{{ url_for('search') }}">Check Stock Prices</a></th>
+              <th style="border:2px solid black;background-color:lightgray;text-align:center"><a href="{{ url_for('logout') }}">Logout</a></th>
+            </tr>
+          </tbody>
+        </table>
+      </nav>
+        <h1>{% block heading %}{% endblock %}</h1>
+
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
