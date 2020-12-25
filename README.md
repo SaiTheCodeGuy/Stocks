@@ -8,4 +8,5 @@ Steps
   https://www.python.org/downloads/
 
   open new VSCode terminal
+  
   run: pip install -r requirements.txt
